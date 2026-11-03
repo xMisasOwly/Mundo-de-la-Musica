@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Mundo de la Música</title>
+
+    <!-- Bootstrap por CDN (framework) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* ===== MODELO DE CAJA GENERAL ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0e6d6;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h2 {
+            color: #8b4513;
+        }
+
+        p {
+            color: #4a4a4a;
+            text-align: justify;
+            line-height: 1.6;
+            word-spacing: 3px;
+        }
+
+        .subtemas {
+            font-size: 18px;
+        }
+
+        .descripcion {
+            font-size: 16px;
+        }
+
+        /* ===== TÍTULO CON POSICIÓN RELATIVA ===== */
+        #titulo-principal {
+            position: relative;
+            top: 5px;
+            left: 10px;
+            font-family: "Georgia", serif;
+            text-align: center;
+            text-shadow: 2px 2px 4px #c0a080;
+            text-decoration: underline;
+        }
+
+        /* ===== MENÚ DE NAVEGACIÓN (modelo de caja) ===== */
+        nav {
+            background-color: #8b4513;
+            padding: 0 20px;
+            border-bottom: 3px solid #5c2e0c;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #f0e6d6;
+            color: #8b4513;
+        }
+
+        /* ===== CONTENEDOR PRINCIPAL (modelo de caja + posición relative) ===== */
+        .contenido {
+            position: relative;
+            width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 3px solid #8b4513;
+        }
+
+        /* ===== ARTÍCULOS (modelo de caja) ===== */
+        article {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #d9c3a8;
+            background-color: #fdf8f2;
+        }
+
+        article.destacado p {
+            background-color: #fff8f0;
+            padding: 10px;
+            border-left: 5px solid #8b4513;
+        }
+
+        .pie {
+            color: #f0e6d6;
+            font-weight: bold;
+        }
+
+        .subtemas a:hover {
+            color: #1e6bb8;
+            text-decoration: underline;
+        }
+
+        /* ===== TABLA (modelo de caja) ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #8b4513;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #8b4513;
+            color: white;
+        }
+
+        td {
+            background-color: #fff8f0;
+        }
+
+        a {
+            color: #1e6bb8;
+            text-decoration: none;
+        }
+
+        /* ===== IMAGEN DE LA AUTORA (posición absoluta) ===== */
+        .foto-autora {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 150px;
+            padding: 5px;
+            border: 3px solid #8b4513;
+            background-color: #ffffff;
+            z-index: 10;
+        }
+
+        .foto-autora img {
+            width: 100%;
+            display: block;
+        }
+
+        .contenido section {
+            padding-right: 190px;
+        }
+
+        /* ===== CINTA FIJA (posición fixed) ===== */
+        .cinta-fija {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background-color: #8b4513;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #5c2e0c;
+            z-index: 20;
+            font-size: 14px;
+        }
+
+        /* ===== FOOTER (modelo de caja) ===== */
+        footer {
+            background-color: #8b4513;
+            padding: 20px;
+            margin-top: 20px;
+            border-top: 3px solid #5c2e0c;
+        }
+
+        footer a {
+            color: #ffd9a0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#que-es">¿Qué es la música?</a></li>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="#instrumentos">Instrumentos</a></li>
+            <li><a href="#historia">Historia</a></li>
+            <li><a href="#actualidad">Actualidad</a></li>
+        </ul>
+    </nav>
+
+    <!-- Encabezado -->
+    <header id="inicio">
+        <h1 id="titulo-principal">El Mundo de la Música</h1>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="contenido">
+
+        <!-- Imagen de la autora posicionada -->
+        <aside class="foto-autora">
+            <img src="yo.jpg" alt="Foto de la autora del sitio web tocando el saxofón">
+        </aside>
+
+        <section>
+
+            <!-- COMPONENTE BOOTSTRAP: alert -->
+            <div class="alert alert-warning" role="alert">
+                🎵 Bienvenido a mi sitio web sobre la música. Explora los géneros, los instrumentos y la historia.
+            </div>
+
+            <article class="destacado">
+                <h2>¿De qué trata este sitio?</h2>
+                <p class="descripcion">Este sitio web está dedicado a la música, una de las expresiones artísticas más importantes de la humanidad. Aquí encontrarás información sobre los diferentes géneros musicales, los instrumentos que dan vida a las melodías y la historia de cómo la música ha acompañado a las personas a lo largo del tiempo.</p>
+                <p class="descripcion">La música nos permite expresar emociones, contar historias y conectar con los demás, sin importar el idioma o el lugar del mundo en el que estemos.</p>
+            </article>
+
+            <article>
+                <h2>Subtemas de mi sitio web</h2>
+                <ul class="subtemas">
+                    <li><a href="#que-es">¿Qué es la música?</a></li>
+                    <li><a href="#generos">Los géneros musicales más populares</a></li>
+                    <li><a href="#instrumentos">Los instrumentos musicales y su clasificación</a></li>
+                    <li><a href="#historia">La historia de la música</a></li>
+                    <li><a href="#actualidad">La música en la actualidad</a></li>
+                </ul>
+            </article>
+
+            <!-- COMPONENTE BOOTSTRAP: accordion -->
+            <article>
+                <h2>Preguntas frecuentes sobre la música</h2>
+                <div class="accordion" id="acordeonMusica">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#uno">
+                                ¿Cuál es la diferencia entre ritmo y melodía?
+                            </button>
+                        </h3>
+                        <div id="uno" class="accordion-collapse collapse show" data-bs-parent="#acordeonMusica">
+                            <div class="accordion-body">
+                                El ritmo organiza la duración de los sonidos en el tiempo, mientras que la melodía es la sucesión de notas que se percibe como una línea musical.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dos">
+                                ¿Qué instrumento es más fácil de aprender?
+                            </button>
+                        </h3>
+                        <div id="dos" class="accordion-collapse collapse" data-bs-parent="#acordeonMusica">
+                            <div class="accordion-body">
+                                Depende de cada persona, pero la flauta dulce y el ukelele suelen ser buenos instrumentos para empezar por su tamaño y su manejo sencillo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- COMPONENTE BOOTSTRAP: card -->
+            <article>
+                <h2>Género destacado</h2>
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body">
+                        <h3 class="card-title">El vallenato</h3>
+                        <p class="card-text">Género tradicional de la costa Caribe colombiana, interpretado con acordeón, caja y guacharaca. Fue declarado Patrimonio Cultural Inmaterial de la Humanidad.</p>
+                        <a href="#generos" class="btn btn-warning">Ver más géneros</a>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <h2>Géneros musicales y sus características</h2>
+                <table class="table table-striped table-bordered">
+                    <tr>
+                        <th>Género</th>
+                        <th>Origen</th>
+                        <th>Instrumentos típicos</th>
+                    </tr>
+                    <tr>
+                        <td>Rock</td>
+                        <td>Estados Unidos</td>
+                        <td>Guitarra eléctrica, batería</td>
+                    </tr>
+                    <tr>
+                        <td>Jazz</td>
+                        <td>Estados Unidos</td>
+                        <td>Saxofón, piano, contrabajo</td>
+                    </tr>
+                    <tr>
+                        <td>Salsa</td>
+                        <td>Caribe</td>
+                        <td>Congas, trompeta, piano</td>
+                    </tr>
+                    <tr>
+                        <td>Vallenato</td>
+                        <td>Colombia</td>
+                        <td>Acordeón, caja, guacharaca</td>
+                    </tr>
+                </table>
+            </article>
+
+            <article id="que-es">
+                <h2>¿Qué es la música?</h2>
+                <p>La música es el arte de organizar sonidos y silencios en el tiempo. A través de la melodía, la armonía y el ritmo, la música transmite emociones y crea experiencias que se comparten entre las personas.</p>
+            </article>
+
+            <article id="generos">
+                <h2>Los géneros musicales más populares</h2>
+                <p>Existen muchos géneros, como el rock, el jazz, la salsa y el vallenato. Cada uno tiene su propio ritmo, sus instrumentos y una historia que lo hace único dentro de la cultura de su región.</p>
+            </article>
+
+            <article id="instrumentos">
+                <h2>Los instrumentos musicales y su clasificación</h2>
+                <p>Los instrumentos se clasifican en cuerda, viento y percusión. De ellos depende el timbre y el carácter de cada pieza musical, y cada familia aporta un color distinto al sonido de una banda u orquesta.</p>
+            </article>
+
+            <article id="historia">
+                <h2>La historia de la música</h2>
+                <p>La música ha acompañado a la humanidad desde la prehistoria. Con el paso del tiempo evolucionó desde los cantos y ritmos rituales hasta las grandes composiciones clásicas y los estilos modernos que conocemos hoy.</p>
+            </article>
+
+            <article id="actualidad">
+                <h2>La música en la actualidad</h2>
+                <p>Hoy la música se escucha en plataformas digitales como Spotify y YouTube, lo que permite que artistas de cualquier lugar del mundo lleguen a un público enorme sin necesidad de grandes disqueras.</p>
+            </article>
+
+        </section>
+
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p class="pie"><strong>Autor:</strong> Maria Jose Misas</p>
+        <p class="pie"><strong>Correo:</strong> mjo.pr123@gmail.com</p>
+       
+        <p class="pie">Conoce más sobre música en <a href="https://es.wikipedia.org/wiki/M%C3%BAsica" target="_blank">Wikipedia</a></p>
+    </footer>
+
+    <!-- Cinta fija: ejemplo de position: fixed -->
+    <div class="cinta-fija">🎵 El Mundo de la Música</div>
+
+    <!-- JavaScript de Bootstrap (necesario para el acordeón) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
